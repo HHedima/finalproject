@@ -21,7 +21,7 @@ public class Word {
     }
 
     // Method to check if the word exists in a word list file
-    public boolean isValidWord() {
+    public boolean isValid() {
         try (java.util.Scanner scanner = new java.util.Scanner(new java.io.File(filePath))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
@@ -48,7 +48,7 @@ public class Word {
 
     public int getScore() {
         score = 0;
-        if (isValidWord()) {
+        if (isValid()) {
             for (Tile tile : tiles) {
                 score += tile.getValue();
             }

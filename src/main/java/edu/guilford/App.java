@@ -21,17 +21,12 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         
-        Tile tile = new Tile('A');
-        Rack rack = new Rack(7);
-        rack.setTile(0, tile);
-        RackPane rackPane = new RackPane(rack);
-        RoundPane roundPane = new RoundPane();
-        WordPane wordPane = new WordPane();
-        
+        // Create a game
+        Game game = new Game();
 
-        TileView tileView = new TileView(tile,0);
-        scene = new Scene(tileView);
-        stage.setTitle("Scrabble Tile");
+
+        scene = new Scene(game, 1000, 400);
+        stage.setTitle("Scrabble");
         stage.setScene(scene);
         stage.show();
 
@@ -42,8 +37,6 @@ public class App extends Application {
         stage.setTitle("Word Pane");
         stage.setScene(scene); */
 
-        scene = new Scene(roundPane);
-        stage.setScene(scene);
 
         /* ScrabbleSet scrabbleSet = new ScrabbleSet();
         ScrabbleSetPane scrabbleSetPane = new ScrabbleSetPane(scrabbleSet);
