@@ -88,7 +88,7 @@ public class RackPane extends GridPane {
         if (position >= 0 && position < tileViews.size()) {
             return tileViews.get(position); // Return the TileView at the specified position
         } else {
-            System.out.println("Invalid position. TileView not found.");
+            //System.out.println("Invalid position. TileView not found.");
             return null;
         }
     }

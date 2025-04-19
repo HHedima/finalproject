@@ -128,10 +128,7 @@ public class RoundPane extends GridPane {
                 wordRack.addTile(currentTileView.getTile()); // Add the tile to the word rack at the same index
                 tileRack.removeTile(index); // Remove the tile from the tile rack at the same index
                 } else {
-                    scoreLabel.setText("Rack Full!");
-                    javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(javafx.util.Duration.millis(500));
-                    pause.setOnFinished(event -> scoreLabel.setText("Score Required: " + scoreRequired));
-                    pause.play();
+                    System.out.println("Word rack is full. Cannot add more tiles.");
 
                 }
                 
@@ -145,7 +142,9 @@ public class RoundPane extends GridPane {
             if (resetLeft > 0) {
             // Handle reset button action here
             System.out.println("Reset button clicked!");
-            //wordRack.clear(); // Clear the word rack
+
+
+            wordRack.clear(); // Clear the word rack
             fillTileRack(); // Refill the tile rack with new tiles
 
             resetLeft--; // Decrease the number of resets left
@@ -193,7 +192,6 @@ public class RoundPane extends GridPane {
     public void updateLabels() {
         this.handsLabel.setText("Hands: " + handsLeft); // Update the hands left label
         this.resetsLabel.setText("Resets : " + resetLeft); // Update the resets left label
-
         
     }
     
@@ -210,6 +208,95 @@ public class RoundPane extends GridPane {
         }
         setTileButtonAction();
 
+    }
+
+    // getters and setters
+    public RackPane getTileRack() {
+        return tileRack;
+    }
+
+    public void setTileRack(RackPane tileRack) {
+        this.tileRack = tileRack;
+    }
+
+    public RackPane getWordRack() {
+        return wordRack;
+    }
+
+    public void setWordRack(RackPane wordRack) {
+        this.wordRack = wordRack;
+    }
+
+    public Label getScoreLabel() {
+        return scoreLabel;
+    }
+
+    public void setScoreLabel(Label scoreLabel) {
+        this.scoreLabel = scoreLabel;
+    }
+
+    public Button getSubmitButton() {
+        return submitButton;
+    }
+
+    public void setSubmitButton(Button submitButton) {
+        this.submitButton = submitButton;
+    }
+
+    public Button getResetButton() {
+        return resetButton;
+    }
+
+    public void setResetButton(Button resetButton) {
+        this.resetButton = resetButton;
+    }
+
+    public Button getScrabbleSetButton() {
+        return scrabbleSetButton;
+    }
+
+    public void setScrabbleSetButton(Button scrabbleSetButton) {
+        this.scrabbleSetButton = scrabbleSetButton;
+    }
+
+    public Label getHandsLabel() {
+        return handsLabel;
+    }
+
+    public void setHandsLabel(Label handsLabel) {
+        this.handsLabel = handsLabel;
+    }
+
+    public Label getResetsLabel() {
+        return resetsLabel;
+    }
+
+    public void setResetsLabel(Label resetsLabel) {
+        this.resetsLabel = resetsLabel;
+    }
+
+    public Word getWord() {
+        return word;
+    }
+
+    public void setWord(Word word) {
+        this.word = word;
+    }
+
+    public int getRoundNumber() {
+        return roundNumber;
+    }
+
+    public void setRoundNumber(int roundNumber) {
+        this.roundNumber = roundNumber;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
 }

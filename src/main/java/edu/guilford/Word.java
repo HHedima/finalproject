@@ -55,6 +55,7 @@ public class Word {
         } else {
             score = 0;
         }
+
         return score;
         
     }

@@ -25,7 +25,7 @@ public class App extends Application {
         Game game = new Game();
 
 
-        scene = new Scene(game, 1000, 400);
+        scene = new Scene(game, 1280, 720);
         stage.setTitle("Scrabble");
         stage.setScene(scene);
         stage.show();
